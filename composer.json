@@ -6,7 +6,7 @@
   "keywords": ["yii2", "barcode", "scanner", "webcam"],
   "license": "MIT",
   "support": {
-    "issues": "https://github.com/JakobReiter/yii2-quaggaJS",
+    "issues": "https://github.com/JakobReiter/yii2-quaggaJS"
   },
   "authors": [
     {
