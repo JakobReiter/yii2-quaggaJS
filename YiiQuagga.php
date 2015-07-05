@@ -1,37 +1,50 @@
 <?php
 /**
-* YiiQuagga.php File
-* @package  yii2-quaggaJS
-* @author   Jakob Reiter
-* @version     
-*/
+ * YiiQuagga.php File
+ * @package  yii2-quaggaJS
+ * @author   Jakob Reiter <jakob.reiter.io@gmail.com>
+ * @version  1.0
+ */
 
 namespace jakobreiter\quaggajs;
 
-class YiiQuagga {
+use \yii\helpers\Html;
+
+class YiiQuagga extends \yii\base\Widget
+{
+
+    public $id;
+
+    public $target = "#code";
+
+    public $name;
+
+    public $messages = '#messages';
+
     /**
      * @inherit doc
      * @throw InvalidConfigException
      */
     public function init()
     {
-        parent::init();
-        $this->registerAssets();
-        echo $this->widget();
-    }
-
-    /**
-     * Registers the needed assets
-     */
-    public function registerAssets()
-    {
         $view = $this->getView();
         YiiQuaggaAsset::register($view);
-        $this->registerPlugin('yiiquagga');
     }
 
-    public function widget()
+    public function run()
     {
-        return "ABC";
+        $wrapper = Html::tag('div', '', [
+            'class' => 'viewport',
+            'data-target' => $this->target,
+            'data-name' => $this->name,
+            'data-messages' => $this->messages,
+        ]);
+
+
+        return Html::tag('div', $wrapper, [
+            "class" => "quaggajs_wrapper",
+            'id' => $this->id,
+        ])
+        .Html::tag('div','',['class'=>'clear']);
     }
 }
