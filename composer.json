@@ -1,8 +1,5 @@
 {
-  // package name
   "name": "Yii2-quaggaJS",
-
-  // package type
   "type": "yii2-extension",
 
   "description": "Yii2 Extension for QuaggaJS",
@@ -17,12 +14,11 @@
       "email": "jakob.reiter.io@gmail.com"
     }
   ],
-  // package dependencies
+
   "require": {
     "yiisoft/yii2": "*"
   },
 
-  // class autoloading specs
   "autoload": {
     "psr-4": {
       "jakobreiter\\quaggajs\\": ""
