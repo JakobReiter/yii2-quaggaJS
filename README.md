@@ -14,17 +14,17 @@ Installation
 
 Usage Barcode Generation
 ------------
-```code
-BarcodeFactory::generateIMG($id, $label, $height, $classString);
+```php
+echo BarcodeFactory::generateIMG($id, $label, $height, $classString);
 ```
 
 Usage Yii2-Quagga 
 ------------
-```code
-YiiQuagga::widget([
-					"id" => 'codereader',
-					'name' => 'BarcodeForm[number]',
-					'target' => '#barcodeform-number',
-					'messages' => '#messages',
-				]);
+```php
+echo YiiQuagga::widget([
+	"id" => 'codereader',
+	'name' => 'BarcodeForm[number]',
+	'target' => '#barcodeform-number',
+	'messages' => '#messages',
+]);
 ```
