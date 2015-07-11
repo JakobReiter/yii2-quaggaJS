@@ -1,15 +1,12 @@
 {
-  // package name
-  "name": "Yii2-quaggaJS",
-
-  // package type
+  "name": "jakobreiter/yii2-quagga-js",
   "type": "yii2-extension",
 
   "description": "Yii2 Extension for QuaggaJS",
   "keywords": ["yii2", "barcode", "scanner", "webcam"],
   "license": "MIT",
   "support": {
-    "issues": "https://github.com/JakobReiter/yii2-quaggaJS",
+    "issues": "https://github.com/JakobReiter/yii2-quaggaJS"
   },
   "authors": [
     {
@@ -17,12 +14,11 @@
       "email": "jakob.reiter.io@gmail.com"
     }
   ],
-  // package dependencies
+
   "require": {
     "yiisoft/yii2": "*"
   },
 
-  // class autoloading specs
   "autoload": {
     "psr-4": {
       "jakobreiter\\quaggajs\\": ""
