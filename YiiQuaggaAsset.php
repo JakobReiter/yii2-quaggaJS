@@ -20,7 +20,7 @@ class YiiQuaggaAsset extends \yii\web\AssetBundle
 
     public function init()
     {
-        $this->sourcePath = '@vendor/jakobreiter/yii2-quaggajs';
+        $this->sourcePath = '@vendor/jakobreiter/yii2-quagga-js';
         $this->setupAssets('css', ['assets/quaggajs']);
         $this->setupAssets('js', ['assets/quagga', 'assets/quagga_app']);
         parent::init();

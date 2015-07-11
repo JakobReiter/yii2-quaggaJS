@@ -21,7 +21,7 @@ class BarcodeFactory
          * 10 ... 428
          *
          */
-        $w_padding = 30;
+        $w_padding = 20;
 
         $code_font = __DIR__.'/assets/3of9x.ttf';
         $text_font = __DIR__."/assets/arial.ttf";
@@ -42,10 +42,17 @@ class BarcodeFactory
 
         $im = imagecreatetruecolor($width, $height);
 
+        //imagealphablending( $im, false );
+        //imagesavealpha( $im, true );
+
+        //$transparent = imagecolorallocatealpha($im, 0, 0, 0, 127);
         $white = imagecolorallocate($im, 255, 255, 255);
         $black = imagecolorallocate($im, 0, 0, 0);
 
+        //imagefilledrectangle($im, 0, 0, $width, $height, $transparent);
         imagefilledrectangle($im, 0, 0, $width, $height, $white);
+
+        //imagefill($im, 0, 0, $transparent);
 
         // Calculate coordinates of the text
         $code_x = ($width / 2) - (($code_width) / 2);
