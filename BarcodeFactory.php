@@ -30,8 +30,8 @@ class BarcodeFactory
         $text_size = $height * 0.1;
 
 
-        $code_box = imagettfbbox($code_size, 0, $code_font, $code);
-        $text_box = imagettfbbox($text_size, 0, $text_font, $text);
+        $code_box = \imagettfbbox($code_size, 0, $code_font, $code);
+        $text_box = \imagettfbbox($text_size, 0, $text_font, $text);
 
         // Get your Text Width and Height
         $code_width = $code_box[2] - $code_box[0];
@@ -40,17 +40,17 @@ class BarcodeFactory
 
         $width = $code_width + ($w_padding * 2);
 
-        $im = imagecreatetruecolor($width, $height);
+        $im = \imagecreatetruecolor($width, $height);
 
         //imagealphablending( $im, false );
         //imagesavealpha( $im, true );
 
         //$transparent = imagecolorallocatealpha($im, 0, 0, 0, 127);
-        $white = imagecolorallocate($im, 255, 255, 255);
-        $black = imagecolorallocate($im, 0, 0, 0);
+        $white = \imagecolorallocate($im, 255, 255, 255);
+        $black = \imagecolorallocate($im, 0, 0, 0);
 
         //imagefilledrectangle($im, 0, 0, $width, $height, $transparent);
-        imagefilledrectangle($im, 0, 0, $width, $height, $white);
+        \imagefilledrectangle($im, 0, 0, $width, $height, $white);
 
         //imagefill($im, 0, 0, $transparent);
 
@@ -61,12 +61,12 @@ class BarcodeFactory
         $text_x = ($width / 2) - (($text_width) / 2);
         $text_y = $code_y + $code_size * 1.7 - ($text_height / 2);
 
-        imagettftext($im, $code_size, 0, $code_x, $code_y + $code_size, $black, $code_font, $code);
-        imagettftext($im, $text_size, 0, $text_x, $text_y + $text_size, $black, $text_font, $text);
+        \imagettftext($im, $code_size, 0, $code_x, $code_y + $code_size, $black, $code_font, $code);
+        \imagettftext($im, $text_size, 0, $text_x, $text_y + $text_size, $black, $text_font, $text);
 
         if ($print) {
-            imagepng($im);
-            imagedestroy($im);
+            \imagepng($im);
+            \imagedestroy($im);
         } else {
             return $im;
         }
